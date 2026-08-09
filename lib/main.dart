@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:new_project/Dashboard.dart';
 import 'package:new_project/demoform.dart';
 import 'package:new_project/firstscreen.dart';
+import 'package:new_project/form.dart';
 import 'package:new_project/registrationform.dart';
 import 'package:new_project/screen_1.dart';
 import 'package:new_project/screen_2.dart';
@@ -26,7 +27,7 @@ class Myapp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      home: SignUp(),
+      home: Dashboard(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'demoform.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -12,7 +13,18 @@ class Dashboard extends StatelessWidget {
         children: [
           Row(
             children: [
-              dashboardbtn(title: "Add user",img: "assets/images/content.png"),
+              dashboardbtn(title: "Add user",
+                  img: "assets/images/content.png",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Demoform(),
+                    ),
+                  );
+                },
+
+              ),
               dashboardbtn(title: "User List",img: "assets/images/contact-list.png"),
             ],
           ),
@@ -27,30 +39,72 @@ class Dashboard extends StatelessWidget {
     );
   }
 
-  Widget dashboardbtn({required title,required img})
-  {
+  Widget dashboardbtn({
+    required title,
+    required img,
+    VoidCallback? onTap,
+  }) {
     return Expanded(
       child: Container(
-        margin: EdgeInsets.all(8.0),
+        margin: const EdgeInsets.all(8.0),
         height: 150,
         child: Card(
           elevation: 4,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(img,
-                height: 60,
-                width: 60,
-                color: Colors.red,
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Text(title,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,)),
-            ],
+          child: InkWell(
+            onTap: onTap,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  img,
+                  height: 60,
+                  width: 60,
+                  color: Colors.red,
+                ),
+
+                const SizedBox(
+                  height: 8,
+                ),
+
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
+
+  // Widget dashboardbtn({required title,required img,required VoidCallback onTap,})
+  // {
+  //   return Expanded(
+  //     child: Container(
+  //       margin: EdgeInsets.all(8.0),
+  //       height: 150,
+  //       child: Card(
+  //         elevation: 4,
+  //         child: Column(
+  //           mainAxisAlignment: MainAxisAlignment.center,
+  //           children: [
+  //             Image.asset(img,
+  //               height: 60,
+  //               width: 60,
+  //               color: Colors.red,
+  //             ),
+  //             SizedBox(
+  //               height: 8,
+  //             ),
+  //             Text(title,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,)),
+  //           ],
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 }
