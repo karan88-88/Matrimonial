@@ -29,7 +29,12 @@ class TextFormField1 extends StatelessWidget {
       decoration: InputDecoration(
         labelText: labelText,
         prefixIcon: Icon(icon),
-        border: const OutlineInputBorder(),
+        border:  OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(
+            color: Color(0xFFE8D6DB),
+          ),
+        ),
       ),
 
       validator: validator,

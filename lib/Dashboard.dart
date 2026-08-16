@@ -7,8 +7,8 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("MATRIMONY",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w200)),backgroundColor: Colors.red,foregroundColor: Colors.white,),
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: const Color(0xFFFFF8F5),
+      appBar: AppBar(title: Text("MATRIMONY",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w200)),backgroundColor: const Color(0xFF8B1E3F),foregroundColor: Colors.white,),
       body: Column(
         children: [
           Row(
@@ -59,7 +59,7 @@ class Dashboard extends StatelessWidget {
                   img,
                   height: 60,
                   width: 60,
-                  color: Colors.red,
+                  color: Color(0xFF8B1E3F),
                 ),
 
                 const SizedBox(
