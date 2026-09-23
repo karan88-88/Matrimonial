@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:new_project/userList.dart';
+import 'Registartion.dart';
 import 'demoform.dart';
 
 class Dashboard extends StatelessWidget {
@@ -15,22 +17,41 @@ class Dashboard extends StatelessWidget {
             children: [
               dashboardbtn(title: "Add user",
                   img: "assets/images/content.png",
+
+
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const Demoform(),
+                      builder: (context) =>  RegistrationScreen(),
                     ),
                   );
                 },
 
               ),
-              dashboardbtn(title: "User List",img: "assets/images/contact-list.png"),
+              dashboardbtn(title: "User List",img: "assets/images/contact-list.png",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>  UserList(),
+                    ),
+                  );
+                },),
             ],
           ),
           Row(
             children: [
-              dashboardbtn(title: "Favorite",img: "assets/images/like.png"),
+              dashboardbtn(title: "Favorite",img: "assets/images/like.png",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => UserList(fromFav: true,),
+                    ),
+                  );
+                },
+              ),
               dashboardbtn(title: "About us",img: "assets/images/profile.png"),
             ],
           ),
